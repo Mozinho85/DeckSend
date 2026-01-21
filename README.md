@@ -1,3 +1,24 @@
+# Flatpak Installation (Recommended for Steam Deck/Bazzite)
+
+1. **Install Flatpak and Flatpak Builder (if not already installed):**
+   ```sh
+   sudo dnf install flatpak flatpak-builder
+   ```
+
+2. **Build the Flatpak package:**
+   ```sh
+   flatpak-builder --user --install build-dir io.github.Mozinho85.DeckSend.json
+   ```
+
+3. **Launch DeckSend from your application menu!**
+
+4. **(Optional) Export a bundle for easy sharing:**
+   ```sh
+   flatpak build-bundle build-dir DeckSend.flatpak io.github.Mozinho85.DeckSend
+   ```
+   You can then double-click `DeckSend.flatpak` to install on any Flatpak-enabled system.
+
+---
 # Graphical Installer (Recommended for Bazzite/Fedora Immutable)
 
 1. Copy the project folder to your Steam Deck.
