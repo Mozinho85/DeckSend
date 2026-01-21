@@ -8,6 +8,7 @@
         {
             "name": "libevdev",
             "buildsystem": "meson",
+            "config-opts": [ "-Dtests=false" ],
             "sources": [
                 {
                     "type": "archive",
