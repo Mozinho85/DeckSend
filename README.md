@@ -18,35 +18,68 @@ This app lets you use your Steam Deck as a Steam Controller on a Linux PC (Fedor
   - bluez-libs-devel
 
 
-## Installation
 
-### Option 1: Use Pre-built Binary
-1. **Install runtime dependencies:**
-   ```sh
-   sudo dnf install -y libevdev bluez bluez-libs
-   ```
-2. **Run the app:**
-   ```sh
-   sudo ./steamdeck_sender
-   ```
-   - You may need to adjust the input device path in `input.c` (e.g., `/dev/input/event0`).
+## Installation on Steam Deck (Bazzite/Silverblue/Fedora Immutable)
 
-### Option 2: Build from Source
-1. **Install build dependencies:**
+### Option 1: System-wide install with rpm-ostree
+
+1. Open a terminal in Desktop Mode.
+2. Run:
    ```sh
-   sudo dnf install -y cmake gcc libevdev-devel bluez bluez-libs-devel
+   sudo rpm-ostree install git cmake gcc libevdev-devel bluez bluez-libs-devel
    ```
-2. **Build the app:**
+3. **Reboot** your Steam Deck after installation.
+
+### Option 2: Use a Toolbox (Recommended for Development)
+
+1. Create and enter a toolbox:
    ```sh
-   cd steamdeck_sender
-   mkdir build && cd build
-   cmake ..
-   make
+   toolbox create
+   toolbox enter
    ```
-3. **Run the app:**
+2. Install dependencies inside the toolbox:
    ```sh
-   sudo ./steamdeck_sender
+   sudo dnf install -y git cmake gcc libevdev-devel bluez bluez-libs-devel
    ```
+
+---
+
+## Clone and Build
+
+```sh
+git clone https://github.com/Mozinho85/DeckSend.git
+cd DeckSend/steamdeck_sender
+mkdir build
+cd build
+cmake ..
+make
+```
+
+---
+
+## Run the App
+
+```sh
+sudo ./steamdeck_sender
+```
+- You may need to adjust input device paths in the code if you get errors about input devices.
+
+---
+
+## Bluetooth Setup
+
+Make sure Bluetooth is enabled:
+```sh
+sudo systemctl start bluetooth
+```
+Pair your Steam Deck with your PC using Bluetooth settings.
+
+---
+
+## Notes
+
+- For immutable systems, toolbox is recommended for development.
+- If you encounter issues, ensure you are in Desktop Mode and have a working network connection.
 
 ## Bluetooth Setup
 - Make sure Bluetooth is enabled:
