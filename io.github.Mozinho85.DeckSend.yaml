@@ -1,0 +1,13 @@
+app-id: io.github.Mozinho85.DeckSend
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: decksend
+modules:
+  - name: decksend
+    buildsystem: simple
+    build-commands:
+      - install -D steamdeck_sender /app/bin/decksend
+    sources:
+      - type: file
+        path: build/steamdeck_sender
