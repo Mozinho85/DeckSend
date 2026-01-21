@@ -9,13 +9,13 @@
             "name": "decksend",
             "buildsystem": "simple",
             "build-commands": [
-                "cmake ..",
+                "cmake .",
                 "make",
                 "install -D steamdeck_sender /app/bin/decksend",
-                "install -Dm644 ../io.github.Mozinho85.DeckSend.desktop /app/share/applications/io.github.Mozinho85.DeckSend.desktop"
+                "install -Dm644 io.github.Mozinho85.DeckSend.desktop /app/share/applications/io.github.Mozinho85.DeckSend.desktop"
             ],
             "sources": [
-                { "type": "dir", "path": ".." }
+                { "type": "dir", "path": "." }
             ]
         }
     ]
