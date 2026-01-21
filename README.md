@@ -1,3 +1,18 @@
+# Graphical Installer (Recommended for Bazzite/Fedora Immutable)
+
+1. Copy the project folder to your Steam Deck.
+2. In Desktop Mode, right-click `install_decksend.sh`, go to Properties → Permissions, and check "Is executable".
+3. Double-click `install_decksend.sh` to run the installer.
+4. Follow the prompts. The app will build and install itself, and a launcher will appear in your app menu.
+
+**The installer will automatically use toolbox (if available), rpm-ostree, or dnf as needed.**
+
+---
+
+## Manual Installation (Advanced)
+
+If you prefer, you can still build and install manually using toolbox, rpm-ostree, or dnf as described earlier in this README.
+
 # Example: Main Entry Point (`main.c`)
 
 Below is the main entry point for the sender app. It initializes input and Bluetooth, reads controller events, builds HID reports, and sends them over Bluetooth:
