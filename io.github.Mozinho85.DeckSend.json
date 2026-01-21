@@ -6,6 +6,17 @@
     "command": "decksend",
     "modules": [
         {
+            "name": "libevdev",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.freedesktop.org/software/libevdev/libevdev-1.13.1.tar.xz",
+                    "sha256": "b2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2"
+                }
+            ]
+        },
+        {
             "name": "decksend",
             "buildsystem": "simple",
             "build-commands": [
